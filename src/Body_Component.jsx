@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {Box} from '@mui/material'
 import Styles from './Asset/mystyles';
+import EndPage from './EndPage';
 
 
 const MainComp=({QSTNS}) =>{
@@ -41,7 +42,7 @@ const MainComp=({QSTNS}) =>{
 console.log(score, count)
 return(
 
-      <Box sx={Styles.outermostbox}>
+      QSTNS.length-1? (<Box sx={Styles.outermostbox}>
         <Box sx={Styles.outerbox}> Question {[count+1]}</Box>
 
         <Box sx={Styles.innerbox}>{QSTNS[count].questions}</Box>
@@ -56,7 +57,7 @@ return(
               </Box>
 
             ))}
-        </Box>
+        </Box>) : (<EndPage/>)
 
         
 

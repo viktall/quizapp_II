@@ -1,3 +1,5 @@
+
+
 const QSTNS = [{id:1, questions:'What is the capital of Algeria ?',
                       options:[
                                     {id:1, optn:'Algiers', isCorrect:true},

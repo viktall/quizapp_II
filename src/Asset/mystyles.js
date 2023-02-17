@@ -15,7 +15,8 @@ const Styles={
 
             display:'flex', 
             justifyContent:'center', 
-            height:60, alignItems:'center', 
+            height:60, 
+            alignItems:'center', 
             fontSize:'25px', 
             bgcolor:'#178CA4'
         },
