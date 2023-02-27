@@ -1,32 +1,33 @@
 import {useState } from 'react';
-import {Box, Button} from '@mui/material';
 import QSTNS from './question';
 import MainComp from './Body_Component';
-
+import Start_Page from './startPage';
 
 function App() {
 
 const [isClicked, setIsclicked]=useState(false)
+const [name, setName]=useState('')
+const [savename, setSavename]=useState({})
 
-const HandleToggle=()=>{
+const HandleSubmit=(e)=>{
 
-      setIsclicked(true)
+      e.preventDefault()
 
+      if (name){
+                setSavename({idty:name})
+                setIsclicked(true)
+              }
+
+      setName('')
   }
 
-console.log(QSTNS)
 
   return (
-  
              isClicked? 
-                                <MainComp QSTNS={QSTNS}/> :
-
-                                 ( 
-                                    <Box sx={{display:'flex', justifyContent:'center', bgcolor:'red'}}>
-                                            <Button variant='contained' onClick={HandleToggle}>Start</Button>
-                                    </Box>
-                                  )        
-    )
-}
+                      <MainComp QSTNS={QSTNS} savename={savename}/> 
+                                : 
+                      <Start_Page  HandleSubmit={HandleSubmit} name={name} setName={setName}/>                
+                           
+)}
 
 export default App
