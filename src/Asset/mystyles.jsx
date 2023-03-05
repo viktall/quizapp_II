@@ -3,7 +3,7 @@ const Styles={
 
         box1:{ 
             
-            width:1042, 
+            width:1048, 
             mx:'auto', 
             color:'#fff',
             bgcolor:'#011627', 
@@ -17,10 +17,10 @@ const Styles={
             justifyContent:'center',
             height:56, 
             alignItems:'center', 
-            fontSize:'42px', 
+            fontSize:'38px', 
             color:'#fff',
             bgcolor:'#011627',
-            py:3
+            py:2
           
         },
 
@@ -40,7 +40,7 @@ const Styles={
             fontSize:'45px', 
             bgcolor:'#b5dcfd',
             color:'#000',
-            mb:3
+            mb:2
         }, 
 
         btn:{
@@ -52,7 +52,7 @@ const Styles={
             alignItems:'center',
             fontSize:'20px',
             mx: 'auto',
-            my:2, 
+            mb:2, 
             cursor:'pointer',
             borderRadius: 2
         }
