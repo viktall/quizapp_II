@@ -1,1 +1,1 @@
-# quizapp_II
+# Quiz application
