@@ -1,16 +1,18 @@
 import React, {useState} from 'react';
-import {Box} from '@mui/material'
-import Styles from './Asset/mystyles';
+import {Box, Container} from '@mui/material'
+//import Styles from './Asset/mystyles';
 import EndPage from './EndPage';
 
 
-const MainComp=({QSTNS, savename}) =>{
+const MainComp=({QSTNS, quz, count, setCount, savename}) =>{
 
-  const [count, setCount] = useState(0)
+  
   const [score, setScore]=useState(0)
   const [correct, setCorrect]= useState(0)
   const [notCorrect, setNotCorrect]= useState(0)
   const [showScore, setShowscore]=useState(false)
+
+  
 
 
   const handleShowScore=()=>{
@@ -20,16 +22,16 @@ const MainComp=({QSTNS, savename}) =>{
   
   const HandleEvent =({id, isCorrect})=> {
 
-
+    
     setTimeout(()=>{
-
+      setCount(count=>count+1)
       setCorrect(0)
       setNotCorrect(0)
-      setCount(prev=>prev+1)
+      
       
 
     },500)
-
+    
     
         if(isCorrect===false){
 
@@ -45,38 +47,44 @@ const MainComp=({QSTNS, savename}) =>{
   }
       
 const username=savename.idty.charAt(0).toUpperCase() + savename.idty.slice(1)  
-console.log(score, count, savename)
+
 return(
 
-      QSTNS.length===count? (<EndPage 
+  QSTNS.length===count? (<EndPage 
 
                                     handleShowScore={handleShowScore} 
                                     score={score} 
                                     showScore={showScore}
                                     username={username}
                                     />)
-                                     :
-    (<Box sx={Styles.box1}>
+       
+                                    :
+  <Container maxWidth="md">
+    
+    <Box sx={{bgcolor:'#011627', color:'#fff', height:'100%', pb:9.6}}>
       
-        <Box sx={Styles.box2}> QUIZ APP </Box>
-        <Box sx={Styles.box3}>
+        <Box sx={{display:'flex', justifyContent:'center', alignItems:'center', height:120, fontSize:30, fontWeight:'bold'}}> QUIZ APP </Box>
+        <Box sx={{display:'flex', justifyContent:'space-between', bgcolor:'#011c32', alignItems:'center', px:2, height:30}}>
             <Box>Hello, {username} </Box>
             <Box> Question {[count+1]} of { QSTNS.length}</Box>
         </Box>
-        <Box sx={Styles.box4}>{QSTNS[count].questions}</Box>
-        
-            {QSTNS[count].options.map((t)=>(
-              <Box 
+       <Box sx={{bgcolor:'#b5dcfd', color:'#000', display:'flex', p:5, justifyContent:'center', alignItems:'center', height:80, fontSize:35, mb:3 }}>{QSTNS[count].questions}</Box>
+        <Box sx={{width:'100%', display:'flex', flexWrap:'wrap', justifyContent:'space-evenly', alignItems:'center'}}>
+            {quz?.map((t)=>(
+              
+              <Box
                   onClick={()=>HandleEvent(t)} 
                   key={t.id} 
-                  sx={{ ...Styles.btn, backgroundColor: correct===t.id? '#00ff00':notCorrect===t.id? '#ff0000':'#d4d24fe1'}}>
+                  sx={{width:270, display:'flex', justifyContent:'center', alignItems:'center', height:75, m:2, bgcolor: correct===t.id? '#00ff00':notCorrect===t.id? '#ff0000':'#d4d24fe1'}}>
 
                             {t.optn}
               </Box>
+              
 
-            ))}
+            ))}</Box>
             
-        </Box>) 
+        </Box>
+        </Container>
 
         
 

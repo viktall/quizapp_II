@@ -7,7 +7,7 @@ const QSTNS = [{id:1, questions:'What is the capital of Algeria ?',
                                     {id:3, optn:'Cairo', isCorrect:false},
                                     {id:4, optn:'Abuja', isCorrect:false}
 
-                ].sort(()=>Math.random()-0.5)},
+                ]},
 
               {id:2, questions:'What is the capital of Angola?',
                        options:[
@@ -16,7 +16,7 @@ const QSTNS = [{id:1, questions:'What is the capital of Algeria ?',
                                     {id:2, optn:'Daka', isCorrect:false},
                                     {id:3, optn:'Cairo', isCorrect:false},
                                     {id:4, optn:'Abuja', isCorrect:false}
-                ].sort(()=>Math.random()-0.5)},
+                ]},
 
                {id:3, questions:'What is the capital of Benin?',
                        options:[
@@ -26,7 +26,7 @@ const QSTNS = [{id:1, questions:'What is the capital of Algeria ?',
                                     {id:3, optn:'Cairo', isCorrect:false},
                                     {id:4, optn:'Abuja', isCorrect:false}
                                             
-                        ].sort(()=>Math.random()-0.5)},
+                        ]},
 
                {id:4, questions:'What is the capital of Botswana?',
                       options:[
@@ -35,7 +35,7 @@ const QSTNS = [{id:1, questions:'What is the capital of Algeria ?',
                                     {id:3, optn:'Cairo', isCorrect:false},
                                     {id:4, optn:'Abuja', isCorrect:false}
 
-                ].sort(()=>Math.random()-0.5)},
+                ]},
 
               {id:5, questions:'What is the capital of Burkina Faso?',
                        options:[
@@ -44,7 +44,7 @@ const QSTNS = [{id:1, questions:'What is the capital of Algeria ?',
                                     {id:2, optn:'Daka', isCorrect:false},
                                     {id:3, optn:'Cairo', isCorrect:false},
                                     {id:4, optn:'Abuja', isCorrect:false}
-                ].sort(()=>Math.random()-0.5)},
+                ]},
 
                {id:6, questions:'What is the capital of Burundi?',
                        options:[
@@ -54,7 +54,7 @@ const QSTNS = [{id:1, questions:'What is the capital of Algeria ?',
                                     {id:3, optn:'Cairo', isCorrect:false},
                                     {id:4, optn:'Abuja', isCorrect:false}
                                             
-                        ].sort(()=>Math.random()-0.5)},
+                        ]},
                         
                {id:7, questions:'What is the capital of Cameroon?',
                         options:[
@@ -64,7 +64,7 @@ const QSTNS = [{id:1, questions:'What is the capital of Algeria ?',
                                     {id:3, optn:'Cairo', isCorrect:false},
                                     {id:4, optn:'Abuja', isCorrect:false}
 
-                ].sort(()=>Math.random()-0.5)},
+                ]},
 
               {id:8, questions:'What is the capital of Cape verde?',
                        options:[
@@ -73,7 +73,7 @@ const QSTNS = [{id:1, questions:'What is the capital of Algeria ?',
                                     {id:2, optn:'Daka', isCorrect:false},
                                     {id:3, optn:'Cairo', isCorrect:false},
                                     {id:4, optn:'Abuja', isCorrect:false}
-                ].sort(()=>Math.random()-0.5)},
+                ]},
 
                {id:9, questions:'What is the capital of Central African Republic ?',
                        options:[
@@ -83,7 +83,7 @@ const QSTNS = [{id:1, questions:'What is the capital of Algeria ?',
                                     {id:3, optn:'Cairo', isCorrect:false},
                                     {id:4, optn:'Abuja', isCorrect:false}
                                             
-                        ].sort(()=>Math.random()-0.5)},
+                        ]},
 
                 {id:10, questions:'What is the capital of Chad ?',
                          options:[
@@ -102,7 +102,7 @@ const QSTNS = [{id:1, questions:'What is the capital of Algeria ?',
                                     {id:2, optn:'Daka', isCorrect:false},
                                     {id:3, optn:'Cairo', isCorrect:false},
                                     {id:4, optn:'Abuja', isCorrect:false}
-                ].sort(()=>Math.random()-0.5)},
+                ]},
 
                 {id:12, questions:'What is the capital of Congo ?',
                          options:[
@@ -112,7 +112,7 @@ const QSTNS = [{id:1, questions:'What is the capital of Algeria ?',
                                     {id:3, optn:'Cairo', isCorrect:false},
                                     {id:4, optn:'Abuja', isCorrect:false}
                                             
-                        ].sort(()=>Math.random()-0.5)},
+                        ]},
 
                 {id:13, questions:'What is the capital of Ivory Coast ?',
                         options:[
@@ -122,7 +122,7 @@ const QSTNS = [{id:1, questions:'What is the capital of Algeria ?',
                                     {id:3, optn:'Cairo', isCorrect:false},
                                     {id:4, optn:'Abuja', isCorrect:false}
 
-                ].sort(()=>Math.random()-0.5)},
+                ]},
 
               {id:14, questions:'What is the capital of Djibouti ?',
                        options:[
@@ -131,7 +131,7 @@ const QSTNS = [{id:1, questions:'What is the capital of Algeria ?',
                                     {id:2, optn:'Daka', isCorrect:false},
                                     {id:3, optn:'Cairo', isCorrect:false},
                                     {id:4, optn:'Abuja', isCorrect:false}
-                ].sort(()=>Math.random()-0.5)},
+                ]},
 
                {id:15, questions:'What is the capital of Egypt ?',
                         options:[
@@ -141,7 +141,7 @@ const QSTNS = [{id:1, questions:'What is the capital of Algeria ?',
                                     {id:3, optn:'Lome', isCorrect:false},
                                     {id:4, optn:'Abuja', isCorrect:false}
                                             
-                        ].sort(()=>Math.random()-0.5)},
+                        ]},
 
                {id:16, questions:'What is the capital of Equatoria Guinea ?',
                         options:[
@@ -151,7 +151,7 @@ const QSTNS = [{id:1, questions:'What is the capital of Algeria ?',
                                     {id:3, optn:'Cairo', isCorrect:false},
                                     {id:4, optn:'Abuja', isCorrect:false}
 
-                ].sort(()=>Math.random()-0.5)},
+                ]},
 
                {id:17, questions:'What is the capital of Eritrea ?',
                         options:[
@@ -160,7 +160,7 @@ const QSTNS = [{id:1, questions:'What is the capital of Algeria ?',
                                     {id:2, optn:'Daka', isCorrect:false},
                                     {id:3, optn:'Cairo', isCorrect:false},
                                     {id:4, optn:'Abuja', isCorrect:false}
-                ].sort(()=>Math.random()-0.5)},
+                ]},
 
                 {id:18, questions:'What is the capital of Ethiopia ?',
                           options:[
@@ -170,7 +170,7 @@ const QSTNS = [{id:1, questions:'What is the capital of Algeria ?',
                                     {id:3, optn:'Cairo', isCorrect:false},
                                     {id:4, optn:'Abuja', isCorrect:false}
                                             
-                        ].sort(()=>Math.random()-0.5)},
+                        ]},
 
                 {id:19, questions:'What is the capital of Gabon ?',
                          options:[
@@ -180,7 +180,7 @@ const QSTNS = [{id:1, questions:'What is the capital of Algeria ?',
                                     {id:3, optn:'Cairo', isCorrect:false},
                                     {id:4, optn:'Abuja', isCorrect:false}
 
-                ].sort(()=>Math.random()-0.5)},
+                ]},
 
                 {id:20, questions:'What is the capital of Gambia?',
                         options:[
@@ -189,7 +189,7 @@ const QSTNS = [{id:1, questions:'What is the capital of Algeria ?',
                                     {id:2, optn:'Daka', isCorrect:false},
                                     {id:3, optn:'Cairo', isCorrect:false},
                                     {id:4, optn:'Abuja', isCorrect:false}
-                ].sort(()=>Math.random()-0.5)}
+                ]}
 ].sort(()=>Math.random()-0.5)
 
 export default QSTNS
