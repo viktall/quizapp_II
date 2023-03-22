@@ -1,6 +1,6 @@
 import React from 'react';
 import {Box, Button, TextField, Divider} from '@mui/material';
-import Imgcomp from './mysvg';
+
 
 const Start_Page=({HandleSubmit, name, setName})=>{
 
@@ -8,23 +8,18 @@ const Start_Page=({HandleSubmit, name, setName})=>{
 
 return(
 <Box sx={{
-        display:'flex', justifyContent:'space-around', alignItems:'center',
+        
         bgcolor:'#d4d24fe1', height:'100vh'
       }}>
-  <Box>
-    <Imgcomp/>
-  </Box>
-  <Divider orientation="vertical" flexItem />
-  <Box>QUIZ APP</Box>
+  
+  <Box sx={{display:'flex', justifyContent:'center', bgcolor:'blue'}}>QUIZ APP</Box>
   <Box
       component="form"
       onSubmit={HandleSubmit} 
       autoComplete="off" 
-      sx={{
-        display:'flex', justifyContent:'center'
-      }}
+      sx={{display:'flex', justifyContent:'center'}} 
     >
-    
+     
             <TextField 
                 required 
                 label='Enter your username' 
@@ -40,9 +35,10 @@ return(
             >
                     Start Game
             </Button>
+            </Box>
     </Box>
 
-    </Box>
+    
 )}
 
 export default Start_Page;

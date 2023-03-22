@@ -2,18 +2,13 @@ import React from 'react';
 import { Button, Box} from '@mui/material';
 
 
-const EndPage=({showScore, handleShowScore, score, username})=>{
-
-
-    const onRestart=()=>{
-        window.location.reload()
-    }
+const EndPage=({score, showScore, handleShowScore, savename, onRestart, qstnLength})=>{
 
 
     return(
         <Box sx={{my:25}}>
             <Box sx={{fontSize:35, textAlign:'center', mb:5}}>
-                <Box> Weldone! {username}🎉</Box> 
+                <Box> Weldone! {savename}🎉</Box> 
                 <Box sx={{color:'#ccc', mt:1}}>You have come to the end of the quiz</Box>
             </Box>
             
@@ -21,7 +16,7 @@ const EndPage=({showScore, handleShowScore, score, username})=>{
             { showScore? 
                     <Box>
                         
-                        <Box sx={{textAlign:'center', fontSize:65}}>You scored: {(score * 5)}%
+                        <Box sx={{textAlign:'center', fontSize:65}}>You scored: {((score/qstnLength) * 100)}%
                            { score<8? <Box>👿</Box>:score<12?<Box>🥉</Box>:score<16?<Box>🥈</Box>:<Box>🏆</Box>}
                         </Box>
                         
