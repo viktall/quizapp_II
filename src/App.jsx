@@ -7,7 +7,7 @@ import EndPage from './EndPage';
 const App=()=> {
 
 const [state, setState]=useState([])
-const [qstnLength, setQLength]=useState(53)
+const [qstnLength, setQLength]=useState(10)
 const [name, setName]=useState('')
 const [savename, setSavename]=useState([])
 const [isClicked, setIsclicked]=useState(false)
