@@ -1,7 +1,7 @@
 import {Box, Container} from '@mui/material'
 
 
-const MainComp=({HandleEvent, state, count, qstnLength, savename, correct, notCorrect}) =>{
+const MainComp=({HandleEvent, state, count, qstnLength, savename, correct, notCorrect, timer}) =>{
 
 return(
 
@@ -12,6 +12,7 @@ return(
             <Box sx={{display:'flex', justifyContent:'center', alignItems:'center', color:'#fff', height:{sm:120, xs:80}, fontSize:{sm:30, xs:20}, fontWeight:'bold'}}> QUIZ APP </Box>
             <Box sx={{display:'flex', justifyContent:'space-between', color:'#fff', bgcolor:'#011c32', alignItems:'center', px:2, height:{sm:40, xs:30}, fontSize:{xs:12, sm:'inherit'}}}>
                 <Box>Hello, {savename} </Box>
+                <Box>{timer}</Box>
                 <Box> Question {[count+1]} of { qstnLength}</Box>
             </Box>
           <Box sx={{bgcolor:'#b5dcfd', color:'#000', display:'flex', p:5, justifyContent:'center', alignItems:'center', height:{sm:100, xs:60}, fontSize:{sm:35, xs:25}, mb:1 }}>{state[count]?.questions}</Box>

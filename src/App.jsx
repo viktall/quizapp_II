@@ -7,6 +7,8 @@ import EndPage from './EndPage';
 const App=()=> {
 
 const [state, setState]=useState([])
+const [timer, setTimer]=useState(10)
+const [compFlip, setCompflip]=useState(false)
 const [qstnLength, setQLength]=useState(10)
 const [name, setName]=useState('')
 const [savename, setSavename]=useState([])
@@ -18,14 +20,35 @@ const [notCorrect, setNotCorrect]=useState(0)
 const [showScore, setShowscore]=useState(false)
 
 
+
+
+useEffect(()=>{
+  if(qstnLength===count||timer===0){
+    setCompflip(true)
+    return()=>clearInterval(timer) && true
+}else{
+    setCompflip(false)
+}
+
+},[count, timer])
 useEffect(()=>{
         if(isClicked){
                 setState(()=>QSTNS.sort(()=>Math.random()-0.5)
                         ?.map(x=>({...x, options:x.options
                         ?.sort(()=>Math.random()-0.5)})))
+
+                        const setTimercount= setInterval(()=>{
+                          setTimer(prev=>prev-1)
+                          
+                          },1000)
+                          return()=>clearInterval(setTimercount)
                       }
+
+                      
         console.log('thanks for running')
 },[isClicked])
+
+
 
 const HandleSubmit=(e)=>{
 
@@ -71,12 +94,15 @@ const HandleEvent =({id, isCorrect})=> {
         setCount(0)
         setIsclicked(false)
         setQLength(10)
-        setSavename([])                                     
+        setSavename([]) 
+        setCompflip(false)  
+        setTimer(30)
+                                         
     }
   
 
-  return (
-          qstnLength===count?
+      return(
+              compFlip?
                       <EndPage
                           score={score}
                           showScore={showScore}
@@ -95,6 +121,7 @@ const HandleEvent =({id, isCorrect})=> {
                               count={count} 
                               savename={savename}
                               qstnLength={qstnLength}
+                              timer={timer}
                             /> 
                                 : 
                       <Start_Page  
