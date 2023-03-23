@@ -7,9 +7,10 @@ import EndPage from './EndPage';
 const App=()=> {
 
 const [state, setState]=useState([])
-const [timer, setTimer]=useState(10)
+const [timer, setTimer]=useState(60)
+const [timerId, setTimerId]=useState(0)
 const [compFlip, setCompflip]=useState(false)
-const [qstnLength, setQLength]=useState(10)
+const [qstnLength, setQLength]=useState(20)
 const [name, setName]=useState('')
 const [savename, setSavename]=useState([])
 const [isClicked, setIsclicked]=useState(false)
@@ -20,32 +21,30 @@ const [notCorrect, setNotCorrect]=useState(0)
 const [showScore, setShowscore]=useState(false)
 
 
-
+useEffect(()=>{
+        if(qstnLength===count){
+                setCompflip(true)
+                clearInterval(timerId)}
+},[count])
 
 useEffect(()=>{
-  if(qstnLength===count||timer===0){
-    setCompflip(true)
-    return()=>clearInterval(timer) && true
-}else{
-    setCompflip(false)
-}
+        if(timer<1){
+                clearInterval(timerId)
+                setCompflip(true)}
+        },[timer])
 
-},[count, timer])
+console.log(timerId)
+
 useEffect(()=>{
-        if(isClicked){
+        let holdTimer=null
+        if(isClicked){  
                 setState(()=>QSTNS.sort(()=>Math.random()-0.5)
                         ?.map(x=>({...x, options:x.options
                         ?.sort(()=>Math.random()-0.5)})))
-
-                        const setTimercount= setInterval(()=>{
-                          setTimer(prev=>prev-1)
-                          
-                          },1000)
-                          return()=>clearInterval(setTimercount)
                       }
-
-                      
-        console.log('thanks for running')
+        if(isClicked){
+                holdTimer= setInterval(()=>{setTimer(prev=>prev-1)},1000)
+                setTimerId(holdTimer)}
 },[isClicked])
 
 
@@ -93,11 +92,11 @@ const HandleEvent =({id, isCorrect})=> {
         setScore(0)
         setCount(0)
         setIsclicked(false)
-        setQLength(10)
+        setQLength(20)
         setSavename([]) 
         setCompflip(false)  
-        setTimer(30)
-                                         
+        setTimer(60)
+        setTimerId(0)                                 
     }
   
 

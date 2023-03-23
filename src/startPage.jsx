@@ -7,12 +7,9 @@ const Start_Page=({HandleSubmit, name, setName})=>{
 
 
 return(
-<Box sx={{
-        
-        bgcolor:'#d4d24fe1', height:'100vh'
-      }}>
+<Box>
   
-  <Box sx={{display:'flex', justifyContent:'center', bgcolor:'blue'}}>QUIZ APP</Box>
+  <Box sx={{display:'flex', justifyContent:'center'}}>QUIZ APP</Box>
   <Box
       component="form"
       onSubmit={HandleSubmit} 
