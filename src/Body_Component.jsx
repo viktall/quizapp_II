@@ -1,4 +1,5 @@
-import {Box, Container} from '@mui/material'
+import {Box, Container} from '@mui/material';
+import AlarmIcon from '@mui/icons-material/Alarm';
 
 
 const MainComp=({HandleEvent, state, count, qstnLength, savename, correct, notCorrect, timer}) =>{
@@ -10,9 +11,9 @@ return(
         <Box sx={{bgcolor:'#011627', height:'100%'}}>
           
             <Box sx={{display:'flex', justifyContent:'center', alignItems:'center', color:'#fff', height:{sm:120, xs:80}, fontSize:{sm:30, xs:20}, fontWeight:'bold'}}> QUIZ APP </Box>
-            <Box sx={{display:'flex', justifyContent:'space-between', color:'#fff', bgcolor:'#011c32', alignItems:'center', px:2, height:{sm:40, xs:30}, fontSize:{xs:12, sm:'inherit'}}}>
+            <Box sx={{display:'flex', justifyContent:'space-between', color:'#fff', bgcolor:'#011c32', alignItems:'center', px:2, height:{sm:40, xs:30}, fontSize:{xs:15, sm:18}}}>
                 <Box>Hello, {savename} </Box>
-                <Box sx={{display:'flex', justifyContent:'center', alignItems:'center', border:2, borderRadius:5, width:30, height:30, bgcolor:'#fff', color:timer<11?'red':'blue'}}>{timer}</Box>
+                <Box sx={{display:'flex', justifyContent:'center', alignItems:'center', color:timer<11?'red':'#fff'}}><AlarmIcon/>{timer}'s</Box>
                 <Box> Question {[count+1]} of { qstnLength}</Box>
             </Box>
           <Box sx={{bgcolor:'#b5dcfd', color:'#000', display:'flex', p:5, justifyContent:'center', alignItems:'center', height:{sm:100, xs:60}, fontSize:{sm:35, xs:25}, mb:1 }}>{state[count]?.questions}</Box>
