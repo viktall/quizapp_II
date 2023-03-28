@@ -22,16 +22,12 @@ const [showScore, setShowscore]=useState(false)
 
 
 useEffect(()=>{
-        if(qstnLength===count){
+        if(qstnLength===count || timer<1){
                 setCompflip(true)
                 clearInterval(timerId)}
-},[count])
 
-useEffect(()=>{
-        if(timer<1){
-                clearInterval(timerId)
-                setCompflip(true)}
-        },[timer])
+},[count,timer])
+
 
 console.log(timerId)
 
@@ -41,10 +37,10 @@ useEffect(()=>{
                 setState(()=>QSTNS.sort(()=>Math.random()-0.5)
                         ?.map(x=>({...x, options:x.options
                         ?.sort(()=>Math.random()-0.5)})))
+
+                holdTimer=setInterval(()=>{setTimer(prev=>prev-1)},1000)
+                          setTimerId(holdTimer)
                       }
-        if(isClicked){
-                holdTimer= setInterval(()=>{setTimer(prev=>prev-1)},1000)
-                setTimerId(holdTimer)}
 },[isClicked])
 
 
@@ -53,11 +49,11 @@ const HandleSubmit=(e)=>{
 
       e.preventDefault()
       
-      if (name){
-                setSavename([name.charAt(0).toUpperCase()+name.slice(1)])
+      if (name.trim()){
+                setSavename([name.trim().charAt(0).toUpperCase()+name.trim().slice(1)])
                 setIsclicked(true)
               }else{
-                setSavename({})
+                setSavename([])
                 setIsclicked(false)
               }
       
@@ -70,7 +66,7 @@ const HandleEvent =({id, isCorrect})=> {
             setCorrect(0)
             setNotCorrect(0)
         },500)
-        
+
         if(isCorrect===false){
             setCorrect(0)
             setNotCorrect(id)  
