@@ -308,7 +308,7 @@ const QSTNS = [{id:1, questions:'What is the capital of Algeria ?',
                                     {id:4, optn:'Abuja', isCorrect:false}
                 ]},
 
-                {id:34, questions:'What is the capital of Morrocco?',
+                {id:34, questions:'What is the capital of Morocco?',
                         options:[
 
                                     {id:1, optn:'Rabat', isCorrect:true},

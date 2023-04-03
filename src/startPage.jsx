@@ -1,64 +1,57 @@
 import React from 'react';
-import {Box, Button, TextField, Paper, List} from '@mui/material';
+import {Box, Stack, Button, TextField, Paper, List, ListItem} from '@mui/material';
 
 
 const Start_Page=({HandleSubmit, name, setName})=>{
 
 return(
-  <Box sx={{display:'flex', height:'100vh'}}>
-    <Paper sx={{width:480, mx:'auto', my:'auto'}}>
-      <Box 
-        sx={{
-              display:'flex', 
-              justifyContent:'center', 
-              alignItems:'center', 
-              height:80, 
-              fontSize:28, 
-              color:'#fff', fontWeight:'bold', bgcolor:'#011c32'}}> QUIZ APP</Box>
-      <Box 
+
+
+  <Stack sx={{flexDirection:'row', height:'100vh'}}>
+
+    <Box flex={1} sx={{my:'auto', p:1}}>
+      <Paper sx={{width:450, mx:'auto'}}>
+        <Box sx={{textAlign:'center', bgcolor:'#011c32', py:2, color:'#fff', fontSize:30, fontWeight:'bold'}}>
+            Quiz App
+        </Box>
+        <Box 
           component="form" 
           onSubmit={HandleSubmit} 
           autoComplete="off" 
-          sx={{height:150, display:'flex', justifyContent:'center', alignItems:'center', bgcolor:'#efefef'}}>
-            
-                      <TextField 
+          sx={{p:5, display:'flex'}}
+          >
+        <TextField 
                           required 
                           label='Enter your username' 
                           value={name} 
                           onChange={(e)=>setName(e.target.value)}
                           inputProps={{maxLength:12}}
-                          autoFocus
-                          sx={{width:260, mr:1}}/>
-            
-                      <Button 
+                          sx={{width:330}}
+                          autoFocus/>
+
+                          <Button 
                           variant='outlined' 
                           type='submit'
-                          sx={{height:56}}
-                      >
-                              Start Game
-                      </Button>
-                     </Box>
-              </Paper>            
-
-
-
-<Box sx={{width:750, bgcolor:'#011c32', color:'white', letterSpacing:1}}>
- 
- <Box sx={{fontSize:30, fontWeight:'bond', textAlign:'center', mt:10, mb:1}}>
-  HOW TO PLAY
- </Box>
-    <Box sx={{fontSize:20, px:10, lineHeight:2}}>
-      <List>
-        <li> 1. To start, enter a username of not more than twelve (12) characters.</li>
-        <li> 2. Choose the correct country-capital from the set of choices (A, B, C, D) displayed  for the given Africa country. 
-               Wrong answers attracts no score.</li>
-        <li> 3. After completing quiz, click on the 'show score' button to display score. </li>
-        <li> 4. For maximum score, all questions (20) must be answered correctly within 60sec. No score is allocated to unaswered questions</li>
-        <li> 5. Players must score above 60%, to pass the quiz</li>
+                          sx={{ml:1, height:56}}>
+                              Start
+                          </Button>       
+            </Box>               
+      </Paper>
+    </Box>
+    <Box flex={1} sx={{bgcolor:'#011c32', color:'white', px:10, display:{xs:'none', md:'block'}}}>
+    <Box sx={{fontSize:30, fontWeight:'bold', textAlign:'center', my:8, mb:4}}>
+          HOW TO PLAY
+    </Box>
+    <List sx={{letterSpacing:1}}>
+        <ListItem> 1. To start, enter a username of not more than twelve (12) characters.</ListItem>
+        <ListItem> 2. Choose the correct country-capital from the set of choices (A, B, C, D) displayed  for the given Africa country.Wrong answers attracts no score.</ListItem>
+        <ListItem> 3. After completing quiz, click on the 'show score' button to display score. </ListItem>
+        <ListItem> 4. For maximum score, all questions (20) must be answered correctly within 60sec. No score is allocated to unaswered questions</ListItem>
+        <ListItem> 5. Players must score above 60%, to pass the quiz</ListItem>
       </List>  
     </Box>
-</Box>
-</Box>
+  </Stack>
+  
 )}
 
 export default Start_Page;

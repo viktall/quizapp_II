@@ -7,7 +7,7 @@ import EndPage from './EndPage';
 const App=()=> {
 
 const [state, setState]=useState([])
-const [timer, setTimer]=useState(60)
+const [timer, setTimer]=useState(120)
 const [timerId, setTimerId]=useState(0)
 const [compFlip, setCompflip]=useState(false)
 const [qstnLength, setQLength]=useState(20)
@@ -91,7 +91,7 @@ const HandleEvent =({id, isCorrect})=> {
         setQLength(20)
         setSavename([]) 
         setCompflip(false)  
-        setTimer(60)
+        setTimer(120)
         setTimerId(0)                                 
     }
   
