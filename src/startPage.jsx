@@ -1,5 +1,5 @@
 import React from 'react';
-import {Box, Stack, Button, TextField, Paper, List, ListItem} from '@mui/material';
+import {Box, Button, TextField, Paper, List, ListItem} from '@mui/material';
 
 
 const Start_Page=({HandleSubmit, name, setName})=>{
@@ -7,10 +7,10 @@ const Start_Page=({HandleSubmit, name, setName})=>{
 return(
 
 
-  <Stack sx={{flexDirection:'row', height:'100vh'}}>
+  <Box sx={{display:'flex', height:'100vh'}}>
 
-    <Box flex={1} sx={{my:'auto', p:1}}>
-      <Paper sx={{width:450, mx:'auto'}}>
+      <Box sx={{display:'flex', alignItems:'center', justifyContent:'center', width:'100%', m:1}}>
+      <Paper>
         <Box sx={{textAlign:'center', bgcolor:'#011c32', py:2, color:'#fff', fontSize:30, fontWeight:'bold'}}>
             Quiz App
         </Box>
@@ -18,7 +18,7 @@ return(
           component="form" 
           onSubmit={HandleSubmit} 
           autoComplete="off" 
-          sx={{p:5, display:'flex'}}
+          sx={{m:5, display:'flex'}}
           >
         <TextField 
                           required 
@@ -26,20 +26,21 @@ return(
                           value={name} 
                           onChange={(e)=>setName(e.target.value)}
                           inputProps={{maxLength:12}}
-                          sx={{width:330}}
-                          autoFocus/>
+                          autoFocus
+                          />
 
                           <Button 
                           variant='outlined' 
                           type='submit'
-                          sx={{ml:1, height:56}}>
+                          sx={{ml:1}}>
                               Start
                           </Button>       
             </Box>               
       </Paper>
+      
     </Box>
-    <Box flex={1} sx={{bgcolor:'#011c32', color:'white', px:10, display:{xs:'none', md:'block'}}}>
-    <Box sx={{fontSize:30, fontWeight:'bold', textAlign:'center', my:8, mb:4}}>
+    <Box sx={{bgcolor:'#011c32', color:'white', px:10, display:{xs:'none', md:'block'}}}>
+    <Box sx={{fontSize:30, fontWeight:'bold', textAlign:'center', my:6}}>
           HOW TO PLAY
     </Box>
     <List sx={{letterSpacing:1}}>
@@ -50,7 +51,7 @@ return(
         <ListItem> 5. Players must score above 60%, to pass the quiz</ListItem>
       </List>  
     </Box>
-  </Stack>
+  </Box>
   
 )}
 
