@@ -9,13 +9,13 @@ return(
       <Container maxWidth="md">
         <Box sx={{bgcolor:'#011627', height:'100%'}}>
           
-            <Box sx={{display:'flex', justifyContent:'center', alignItems:'center', color:'#fff', height:{sm:120, xs:80}, fontSize:{sm:30, xs:20}, fontWeight:'bold'}}> QUIZ APP </Box>
-            <Box sx={{display:'flex', justifyContent:'space-between', color:'#fff', bgcolor:'#011c32', alignItems:'center', px:2, height:{sm:40, xs:30}, fontSize:{xs:10, sm:18}}}>
+            <Box sx={{display:'flex', justifyContent:'center', alignItems:'center', color:'#fff', height:{sm:120, xs:70}, fontSize:{sm:30, xs:15}, fontWeight:'bold'}}> QUIZ APP </Box>
+            <Box sx={{display:'flex', justifyContent:'space-between', color:'#fff', bgcolor:'#011c32', alignItems:'center', px:2, height:{sm:40, xs:35}, fontSize:{xs:10, sm:18}}}>
                 <Box>Hello, {savename} </Box>
-                <Box sx={{display:'flex', justifyContent:'center', alignItems:'center', '& .MuiSvgIcon-fontSizeMedium':{fontSize:20}, color:timer<11?'red':'#fff'}}><AlarmIcon/>{timer}`</Box>
+                <Box sx={{display:'flex', justifyContent:'center', alignItems:'center', '& .MuiSvgIcon-fontSizeMedium':{fontSize:{sm:18, xs:10}}, color:timer<11?'red':'#fff'}}><AlarmIcon/>{timer}`</Box>
                 <Box> Question {[count+1]} of { qstnLength}</Box>
             </Box>
-          <Box sx={{bgcolor:'#b5dcfd', color:'#000', display:'flex', p:5, justifyContent:'center', alignItems:'center', height:{sm:100, xs:60}, fontSize:{sm:35, xs:25}, mb:1 }}>{state[count]?.questions}</Box>
+          <Box sx={{bgcolor:'#b5dcfd', color:'#000', display:'flex', p:5, justifyContent:'center', alignItems:'center', height:{sm:100, xs:52}, fontSize:{sm:30, xs:18}, mb:1 }}>{state[count]?.questions}</Box>
             <Box sx={{width:'100%', display:'flex', flexWrap:'wrap', justifyContent:'space-evenly', alignItems:'center', pb:1.1}}>
                 {state[count]?.options?.map((t,i)=>{
   

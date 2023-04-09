@@ -107,10 +107,10 @@ const QSTNS = [{id:1, questions:'What is the capital of Algeria ?',
                 {id:12, questions:'What is the capital of the Democratic Republic of Congo ?',
                          options:[
 
-                                    {id:1, optn:'Brazzaville', isCorrect:true},
+                                    {id:1, optn:'Kinshasha', isCorrect:true},
                                     {id:2, optn:'Sao Tome', isCorrect:false},
                                     {id:3, optn:'Moroni', isCorrect:false},
-                                    {id:4, optn:'Kinshasa', isCorrect:false}
+                                    {id:4, optn:'Brazzaville', isCorrect:false}
                                             
                         ]},
 
@@ -486,7 +486,17 @@ const QSTNS = [{id:1, questions:'What is the capital of Algeria ?',
                                     {id:2, optn:'Bujumbura', isCorrect:false},
                                     {id:3, optn:'Antananarivo', isCorrect:false},
                                     {id:4, optn:'Windhoek', isCorrect:false}
-                ]}
+                ]},
+
+                {id:54, questions:'What is the capital of the Republic of Congo ?',
+                         options:[
+
+                                    {id:1, optn:'Brazzaville', isCorrect:true},
+                                    {id:2, optn:'Accra', isCorrect:false},
+                                    {id:3, optn:'Antananarivo', isCorrect:false},
+                                    {id:4, optn:'Kinshasa', isCorrect:false}
+                                            
+                        ]}
 
 ]
 

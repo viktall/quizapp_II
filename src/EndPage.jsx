@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Box, Stack, List, ListItem} from '@mui/material';
+import { Button, Box, Stack, List, ListItem, ListItemText} from '@mui/material';
 import { CheckCircle } from '@mui/icons-material';
 
 
@@ -10,26 +10,33 @@ const EndPage=({score, showScore, handleShowScore, savename, onRestart, qstnLeng
 
 return(
         <Stack>
-                <Box sx={{display:'flex', flexDirection:'column', bgcolor:'#92e1e2', alignItems:'center', py:{sm:4, xs:2}}}>
+                <Box sx={{display:'flex', flexDirection:'column', bgcolor:'#92e1e2', alignItems:'center', justifyContent:'center', height:160}}>
                         <Box sx={{'& .MuiSvgIcon-fontSizeMedium':{fontSize:{sm:60, xs:45}}}}><CheckCircle color='success'/></Box>
-                        <Box sx={{fontSize:{sm:25, xs:20}, letterSpacing:1, fontWeight:'bold', p:2}}>CONGRATULATIONS, <span style={{color:'#828282'}}>{savename}!</span></Box>
+                        <Box sx={{fontSize:{sm:25, xs:18}, letterSpacing:1, fontWeight:'bold'}}>CONGRATULATIONS, <span style={{color:'#828282'}}>{savename}!</span></Box>
                 </Box>
-                <Box sx={{pl:{sm:30, xs:8}}}>
-                        <Box> 
-                                <Box sx={{color:'#a2a2a2', fontSize:{sm:34, xs:27}, py:4}}>You have completed the quiz</Box>
-                                <Box sx={{ display:showScore && 'none'}}> 
+                <Box sx={{mx:{sm:20, xs:5}}}>
+                        <List> 
+                                <ListItem sx={{color:'#a2a2a2', '& .MuiTypography-root':{fontSize:{sm:24, xs:18}}}}><ListItemText primary='You have completed the quiz'/></ListItem>
+                                <ListItem sx={{ display:showScore && 'none'}}> 
                                         <Button size="large" variant='outlined' onClick={handleShowScore}>Show result</Button>
-                                </Box>
-                        </Box>
+                                </ListItem>
+                        </List>
                         {showScore &&
-                <List sx={{fontSize:24}}>
-                                        <ListItem>Correct answers: {score} </ListItem>
-                                        <ListItem>Percentage scored: {((score/qstnLength) * 100)}%</ListItem>
-                                        <ListItem>Pass mark: 60%</ListItem>
-                                        <ListItem sx={{display:'flex'}}>Remark: {score <12 ?<Box sx={{color:'error.main'}}> Failed</Box>: <Box sx={{color:'success.main'}}> Passed</Box>}</ListItem>
+                <List>
                                         <ListItem>
+                                                <ListItemText primary={`Correct answers: ${score}`}/>
+                                        </ListItem>
+                                        <ListItem> 
+                                                <ListItemText primary={`Percentage scored: ${((score/qstnLength) * 100)}% `}/> 
+                                        </ListItem>
+                                        <ListItem>
+                                                <ListItemText primary={`Pass mark: 60%`}/> 
+                                        </ListItem>
+                                        <ListItem>
+                                                <ListItemText sx={{color:score<12?'red':'green'}} primary={`Result: ${score <12 ? 'Failed':'Passed'}`}/> 
+                                        </ListItem>
+                                        <ListItem sx={{my:3}}>
                                                 <Button 
-                                                        sx={{display:'flex', my:5}}
                                                         variant='outlined' 
                                                         size='large'
                                                         onClick={onRestart}> 
